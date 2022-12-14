@@ -1,8 +1,14 @@
 
 using UnityEngine;
 
+// How to: Methoden
+
+
 public class HelloMethods : MonoBehaviour
 {
+    //1 Instanzvariable ändern
+    //2 return Rückgabewert haben
+    // für 5) return --> Vorschlag für 5 GetDifference() - mit strg+R umbenennen 
 
     //2) Instanzvariable nutzen
     private int startValue2 = 0;
@@ -24,34 +30,23 @@ public class HelloMethods : MonoBehaviour
         IncrementByOne();
         Debug.Log("after startValue: " + startValue2);
 
-        //ad 3)
+        //at 3)
         Debug.Log("before startValue3: " + startValue3);
         IncrementByX(Random.Range(1,10));
         Debug.Log("after startValue3: " + startValue3);
 
         //at 4)
         Debug.Log("before startValue4: " + startValue4);
-        DecrementByOne(startValue4);
+        OutputDecrementedValue(startValue4);
         Debug.Log("after startValue4: " + startValue4);
 
         //at 5)
         Debug.Log("before startValue5: " + startValue5);
-        startValue5 = DecrementByX(startValue5, 2);
+        startValue5 = GetDifference(startValue5, 2);
         Debug.Log("after startValue5: " + startValue5);
     }
 
-    //5) incl. return value
-    private int DecrementByX(int start, int valToSub)
-    {
-        return start - valToSub;
-    }
-
-    //4)
-    private void DecrementByOne(int val)
-    {
-        val--;
-        Debug.Log("val: " + val);
-    }
+   
 
 
     //3)
@@ -59,6 +54,22 @@ public class HelloMethods : MonoBehaviour
     {
         startValue3 += valToAdd;
     }
+
+
+
+    //4)
+    private void OutputDecrementedValue(int val)
+    {
+        val--;
+        Debug.Log("val: " + val);
+    }
+
+    //5) incl. return value
+    private int GetDifference(int a, int b)
+    {
+        return a - b;
+    }
+
 
     private void IncrementByOne()
     {
